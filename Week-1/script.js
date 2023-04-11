@@ -4,7 +4,6 @@ let Study="6 months";
 let goal="graduate";
 let intrest= "pentesting and ethical hacking";
 
-let intro = ["Natalia","Q.Evans","6 months","graduate","pentesting and ethical hacking"];
+let intro = [firstname,lastname,Study,goal,intrest];
 
 document.getElementById("intro").innerHTML= intro;
-console.log(intro);
