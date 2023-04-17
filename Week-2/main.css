@@ -1,0 +1,35 @@
+html, body{
+    background-repeat:  no-repeat; 
+    background-image: url("hotcold.jpg");
+    background-size: cover;
+}
+img{
+  border-style:none;
+  max-width: 450px;
+}
+
+body{
+  Color:rgb(235, 206, 206);
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  Color:rgb(235, 206, 206);
+  text-align: center;
+}
+
+input, button{
+  border: none;
+  outline: none;
+  display: inline-block;
+  height: 34px;
+  justify-content: center;
+  position: relative;
+  box-sizing:border-box;
+  padding:0 18px;
+}
+
+#output{
+  text-align: center;
+}
