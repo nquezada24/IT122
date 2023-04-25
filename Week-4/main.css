@@ -1,20 +1,55 @@
-#choiceBtn{
+html,body{
+    background-image: url(rps.jpg);
+    background-size: contain;
+    background-size: cover;
+    background-position-x: center;
+    text-shadow: 2px 2px 5px rgb(242, 180, 249);
+}
+
+.button{
     line-height: 30px;
     width: 150px;
 }
-#gameDiv{
-    font-family: 'Brush Script MT', cursive;
-    border: 3px solid;
-    border-radius: 25px;
-    padding: 10px;
-    background-color: grey;
+
+.gameDiv{
+    border: 0.5rem outset pink;
+    outline: 0.5rem solid khaki;
+    box-shadow: 0 0 0 2rem hsl(197, 71%, 73%);
+    border-radius: 12px;
+    font: bold 1rem sans-serif;
+    margin: auto;
+    width: 500px;
+    padding: 1rem;
+    outline-offset: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+[id="playerPick"]{
+    color:rgb(187, 138, 232);
+}
+
+[id="computerPick"]{
+    color:hsl(197, 60%, 53%);
+}
+
+[id="result"]{
+    color:rgb(89, 241, 84);
+}
+
+h2{
+    color: rgb(125, 196, 196);
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: khaki;
+    color: white;
     text-align: center;
-}
-
-#playerText{
-    color:blueviolet
-}
-
-#computertext{
-    color:red
-}
+ };

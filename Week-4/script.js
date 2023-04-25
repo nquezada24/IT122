@@ -1,49 +1,56 @@
-const playerText = document.querySelector("#playerText");
-const computerText = document.querySelector("#playerText");
-const resultText = document.querySelector("#resultText");
-const choiceBtn = document.querySelectorAll("#choiceBtn");
+const computerPickDisplay = document.getElementById('computerPick');
+const playerPickDisplay = document.getElementById('playerPick');
+const resultDisplay = document.getElementById('result');
+const possiblePicks = document.querySelectorAll('button');
 
-let player;
-let computer;
-let result;
+let playerPick
+let computerPick
+let result
 
-choiceBtn.forEach(button => button.addEventListener("click", () => {
-
-    player = button.textContent;
-    computerTurn();
-    playerText.textContent = `Player: ${player}`;
-    computerText.textContent = `Computer: ${computer}`;
-    resultText.textContent = checkWinner();
-
+possiblePicks.forEach(possiblePick => possiblePick.addEventListener('click', (e) => {
+  playerPick = e.target.id
+  playerPickDisplay.innerHTML = playerPick
+  generateComputerPick()
+  getResult()
 }));
 
-function computerTurn(){
-    const ranNum = Math.floor(Math.random()*3) +1;
-
-    switch(ranNum){
-        case 1:
-            computer = "ROCK";
-            break;
-        case 2:
-            computer = "PAPER";
-            break;
-        case 3:
-            computer = "SICSSORS";
-            break;    
-    }
+function generateComputerPick() {
+  const randomNumber = Math.floor(Math.random() * 3) + 1
+  //console.log(randomNumber)
+  
+  if (randomNumber === 1) {
+    computerPick = 'rock'
+  }
+  if (randomNumber === 2) {
+    computerPick = 'scissors'
+  }
+  if (randomNumber === 3) {
+    computerPick = 'paper'
+  }
+  computerPickDisplay.innerHTML = computerPick
 };
 
-function checkWinner(){
-    if(player == computer){
-        return "Draw!";
+function getResult(){
+    if (computerPick === playerPick) {
+      result = 'its a draw!'
     }
-    else if(computer == "ROCK"){
-        return (player == "PAPER") ? "You WIN! " : "You Lose!"
+    if (computerPick === 'rock' && playerPick === "paper") {
+      result = 'you win!'
     }
-    else if(computer == "PAPER"){
-        return (player == "SCISSORS") ? "You WIN! " : "You Lose!"
+    if (computerPick === 'rock' && playerPick === "scissors") {
+      result = 'you lost!'
     }
-    else if(computer == "SCISSORS"){
-        return (player == "ROCK") ? "You WIN! " : "You Lose!"
+    if (computerPick === 'paper' && playerPick === "scissors") {
+      result = 'you win!'
     }
-};
+    if (computerPick === 'paper' && playerPick === "rock") {
+      result = 'you lose!'
+    }
+    if (computerPick === 'scissors' && playerPick === "rock") {
+      result = 'you win!'
+    }
+    if (computerPick === 'scissors' && playerPick === "paper") {
+      result = 'you lose!'
+    }
+    resultDisplay.innerHTML = result
+  };
